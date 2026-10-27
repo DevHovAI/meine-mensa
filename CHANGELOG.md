@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- Card works next to browser_mod and other add-ons that load the scoped custom element
+  registry polyfill. Before, the card picker kept spinning and dashboards showed
+  "Custom element doesn't exist: meine-mensa-card".
+
 ## 0.1.0
 
 First version.
