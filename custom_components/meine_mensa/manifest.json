@@ -1,0 +1,14 @@
+{
+  "domain": "meine_mensa",
+  "name": "Meine Mensa",
+  "codeowners": ["@DevHovAI"],
+  "config_flow": true,
+  "dependencies": ["frontend", "http"],
+  "documentation": "https://github.com/DevHovAI/meine-mensa",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/DevHovAI/meine-mensa/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.1.0"
+}

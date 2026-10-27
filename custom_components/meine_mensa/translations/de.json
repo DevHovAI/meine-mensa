@@ -1,0 +1,26 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Mensen auswählen",
+        "description": "Die Speisepläne kommen von meine-mensa.de (Studentenwerk Halle). Jede Mensa wird ein Sensor für die Meine-Mensa-Karte.",
+        "data": { "canteens": "Mensen" }
+      },
+      "reconfigure": {
+        "title": "Mensen auswählen",
+        "data": { "canteens": "Mensen" }
+      }
+    },
+    "error": { "no_canteen": "Wähle mindestens eine Mensa." },
+    "abort": {
+      "cannot_connect": "meine-mensa.de ist nicht erreichbar. Versuch es später noch einmal.",
+      "reconfigure_successful": "Mensen geändert.",
+      "single_instance_allowed": "Meine Mensa ist schon eingerichtet. Über „Neu konfigurieren“ änderst du die Mensen."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "meals_today": { "name": "Gerichte heute", "unit_of_measurement": "Gerichte" }
+    }
+  }
+}

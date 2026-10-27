@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-12 col-x-offset-1">
+            </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="lightbox"]').click(function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        })
+        $('.collapse').on('show.bs.collapse', function () {
+            const targetId = $(this).attr('id');
+            $(`button[data-target="#${targetId}"] i`)
+                .removeClass('fa-chevron-down')
+                .addClass('fa-chevron-up');
+        });
+
+        $('.collapse').on('hide.bs.collapse', function () {
+            const targetId = $(this).attr('id');
+            $(`button[data-target="#${targetId}"] i`)
+                .removeClass('fa-chevron-up')
+                .addClass('fa-chevron-down');
+        });
+    })
+</script>
