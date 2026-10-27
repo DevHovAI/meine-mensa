@@ -4,6 +4,8 @@ A Home Assistant integration and dashboard card for the meal plans of the
 **Studentenwerk Halle** canteens (Halle, Merseburg, Köthen, Bernburg, Dessau, Burg),
 as published on [meine-mensa.de](https://www.meine-mensa.de).
 
+<img src="images/screenshot.png" alt="Two Meine Mensa cards: all meals with photos, and the vegetarian filter with allergens" width="720">
+
 - Choose your canteens during setup; each one becomes a sensor
 - Today and the next five days, refreshed every three hours
 - A card that shows the next day with meals – with photos, sides, labels and prices

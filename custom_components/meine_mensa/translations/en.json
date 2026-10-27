@@ -1,0 +1,26 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Choose canteens",
+        "description": "Meal plans come from meine-mensa.de (Studentenwerk Halle). Each canteen becomes a sensor for the Meine Mensa card.",
+        "data": { "canteens": "Canteens" }
+      },
+      "reconfigure": {
+        "title": "Choose canteens",
+        "data": { "canteens": "Canteens" }
+      }
+    },
+    "error": { "no_canteen": "Choose at least one canteen." },
+    "abort": {
+      "cannot_connect": "meine-mensa.de cannot be reached. Try again later.",
+      "reconfigure_successful": "Canteens updated.",
+      "single_instance_allowed": "Meine Mensa is already set up. Use Reconfigure to change the canteens."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "meals_today": { "name": "Meals today", "unit_of_measurement": "meals" }
+    }
+  }
+}

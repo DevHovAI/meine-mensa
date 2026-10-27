@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="TEST-CSRF-TOKEN">
+    <title>
+                        Speiseplan
+ | Meine-Mensa
+        </title>
+    <!-- Styles -->
+    <link href="https://www.meine-mensa.de/css/yummy.css?id=4cda52fd1f1cfc89ba113addb0163b3b" rel="stylesheet">
+    <meta name="publisher" content="Peinhardt IT Systeme http://www.peinhardt.it"/>
+    <meta name="copyright" content="Peinhardt IT Systeme"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light shadow-sm p-md-0">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img alt="Meine-Mensa.de" src="https://www.meine-mensa.de/img/logo_new.svg">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-right" id="navbar">
+            <ul class="nav navbar-nav ml-auto ">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.meine-mensa.de">Speiseplan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.meine-mensa.de/yummy">YUMMY &ndash; Speisen-Erinnerung einrichten</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container pt-3 mb-5 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 ">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="" id="searchForm" method="post">
+                            <div class="row date-nav mb-3">
+                                <div class="col-9 col-md-10">
+                                    <button type="button" id="todayButton" class="btn btn-success stw-button">Heute</button>
+                                    <button type="button" id="tomorrowButton" class="btn btn-success stw-button">Morgen</button>
+                                </div>
+                                <div class="col-3 col-md-2 ">
+                                    <div class="input-group date text-right" id="datetimepicker1"
+                                         data-target-input="nearest">
+                                        <input type="hidden" class="form-control datetimepicker-input" id="food_date"
+                                               data-target="#datetimepicker1"/>
+                                        <div class="btn btn-success stw-button" data-target="#datetimepicker1"
+                                             data-toggle="datetimepicker"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <select id="location_id" name="location_id" class="selectpicker  form-control"
+                                                multiple data-width="100%" title="Bitte Mensa wählen">
+                                                                                                                                                <option value="3"
+                                                            >Harzmensa</option>
+                                                                                                                                                                                                <option value="5"
+                                                            >Weinbergmensa </option>
+                                                                                                                                                                                                <option value="7"
+                                                            >Mensa Köthen</option>
+                                                                                                                                                                                                <option value="8"
+                                                            >Mensa Bernburg</option>
+                                                                                                                                                                                                <option value="9"
+                                                            >Mensa Neuwerk</option>
+                                                                                                                                                                                                <option value="10"
+                                                            >Mensa Tulpe</option>
+                                                                                                                                                                                                                                                                                            <option value="12"
+                                                            >Mensa Burg</option>
+                                                                                                                                                                                                <option value="13"
+                                                            >Mensa Dessau</option>
+                                                                                                                                                                                                <option value="14"
+                                                            >Mensa Franckesche Stiftungen</option>
+                                                                                                                                                                                                                                                                                            <option value="16"
+                                                            >Mensa Merseburg</option>
+                                                                                                                                                                                                <option value="17"
+                                                            >Heidemensa</option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="22"
+                                                            >Mensa Lohmannstraße</option>
+                                                                                                                                                                                                                                </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-right">
+                                    <button type="button" id="displayButton" class="btn btn-success pull-right stw-button">Anzeigen
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ajax_content">
+                    </div>
+    </div>
+
+
+<footer class="navbar fixed-bottom navbar-light bg-light p-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 justify-content-center">
+                <p><small>&copy;2025 <a href="http://www.peinhardt.it">Peinhardt IT Systeme</a> |
+                        <a href="impressum">Impressum</a> |
+                        <a href="datenschutz">Datenschutz</a> |
+                        <a href="backend">Mitarbeiter Login</a>
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://www.meine-mensa.de/js/yummy.js?id=e1699f3ba93b5a66321d6ef9ffc07c8c"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datetimepicker1').datetimepicker({
+                locale: 'de',
+                format: 'DD.MM.YYYY',
+                defaultDate: '2026-10-27',
+                allowInputToggle: true
+            });
+            $('#datetimepicker1').on('change.datetimepicker', function (e) {
+                display();
+            });
+
+            $('#location_id').on('hidden.bs.select', function (e) {
+                display();
+            });
+            $('#todayButton').click(function () {
+                $('#food_date').val('27.10.2026')
+                display();
+            });
+            $('#tomorrowButton').click(function () {
+                $('#food_date').val('28.10.2026')
+                display();
+            });
+            $('#displayButton').click(function () {
+                display();
+            });
+                        enableLW();
+
+        })
+        ;
+
+        function enableLW() {
+            $('button.yummy-button').click(function () {
+                url = 'https://www.meine-mensa.de/yummy/go';
+                data = new Object();
+                data.food_id = $(this).data('food_id');
+                data.query = 'addFoodToSession';
+                $.ajax({
+                    method: "POST",
+                    url: url,
+                    data: data,
+                    headers: {
+                        'X-CSRF-TOKEN': 'TEST-CSRF-TOKEN'
+                    }
+                }).done(function (response) {
+                    self.location = 'https://www.meine-mensa.de/yummy';
+                });
+            });
+        }
+
+        function display() {
+            if ($('#location_id').val() != null) {
+                url = 'https://www.meine-mensa.de/yummy/go';
+                $.ajax({
+                    method: "POST",
+                    url: url,
+                    headers: {
+                        'X-CSRF-TOKEN': 'TEST-CSRF-TOKEN'
+                    },
+                    data: {'date': $('#food_date').val(), 'location_ids': $('#location_id').val(), 'query': 'foodplan'}
+                }).done(function (response) {
+                    if (response.length != 0) {
+                        $('#ajax_content').html(response)
+                    } else {
+                        $('#ajax_content').html('')
+                    }
+                    enableLW();
+                })
+            } else {
+
+            }
+        }
+
+    </script>
+</body>
+</html>
